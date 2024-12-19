@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve user profile data from localStorage
+        var userProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+        if (userProfile) {
+            // Display data on the profile page
+            document.getElementById('profile-name').textContent = userProfile.name;
+            document.getElementById('profile-mobile').textContent = userProfile.mobile;
+            document.getElementById('profile-email').textContent = userProfile.email;
+            document.getElementById('profile-age').textContent = userProfile.age;
+            document.getElementById('profile-gender').textContent = userProfile.gender;
+            document.getElementById('profile-field').textContent = userProfile.fieldOfInterest;
+        } else {
+            // Handle case where no user data is found
+            alert('No user profile found! Please register first.');
+            window.location.href = 'register.html'; // Redirect to the registration page
+        }
+    });
+  </script>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-picture">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    </div>
+    <div class="profile-details">
+      <h2><strong>Name:</strong> <span id="profile-name"></span></h2>
+      <h2><strong>Mobile Number:</strong> <span id="profile-mobile"></span></h2>
+      <h2><strong>Email:</strong> <span id="profile-email"></span></h2>
+      <h2><strong>Age:</strong> <span id="profile-age"></span></h2>
+      <h2><strong>Gender:</strong> <span id="profile-gender"></span></h2>
+      <h2><strong>Field of Interest:</strong> <span id="profile-field"></span></h2>
+    </div>
+  </div>
+</body>
+</html>

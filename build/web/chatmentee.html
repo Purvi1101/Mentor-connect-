@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentee Chat</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Mentee Chat</h2>
+    </div>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Type your message...">
+      <button id="sendButton">Send</button>
+    </div>
+  </div>
+  <script src="chat.js"></script>
+  <script>
+    const role = 'mentee'; // Mentee's role
+    initChat(role);
+  </script>
+</body>
+</html>
